@@ -1,0 +1,6 @@
+.mapa { height: 380px; }
+
+#mapas {
+    display: flex;
+    flex-direction: column;
+}

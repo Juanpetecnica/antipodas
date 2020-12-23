@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input-group">
+        <input type="text" name="searchInput" id="searchInput" class="form-control" placeholder="Enter the country, city, address or zip code..." maxlength="100" autocomplete="off" title="Enter the country, city, address or zip code">
+        <span class="input-group-btn">
+            <a class="btn btn-default" onclick="initLocation();" title="Locate me"><span class="glyphicon glyphicon-map-marker"></span></a>
+            <a class="btn btn-success" onclick="codeByAddress();" title="Find the other side of the world"><span class="glyphicon glyphicon-search"></span> Find</a>
+        </span>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="leaflet.min.js"></script>
+    <script src="control-geocoder.js"></script>
+    <script src="jquery-3-1-1.js"></script>
+    <script src="main.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
