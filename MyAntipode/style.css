@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.main{
+    height: 100rem;
+}
+.main-backgr{
+}
+.main-backgr-izq{
+    background-color: azure;
+}
+.main-backgr-der{
+    background-color: cadetblue;
+}
+
+.main-izq{
+    background-color: transparent;
+}
+
+.main-der{
+    background-color: transparent;
+}
