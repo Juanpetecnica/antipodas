@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes de google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600&display=swap" rel="stylesheet"> 
+    <!-- CSS Librería de geolocalizacion -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+</head>
+<body> 
+    <div class="main row">
+        <div class="main-izq col-xs-8 ">
+            <div class="row start-xs ">
+                <div class="main-title col-xs-6">
+                    <h1>Where is my antipode?</h1>
+                    <h2>The antipode of any place on the Earth is the place that is diametrically opposite it, so a line drawn from the one to the other passes through the centre of Earth and forms a true diameter.</h2>
+                </div> 
+                <div class="main-search col-xs-6">
+                    <label for="searchLocation">Introduce your location: </label>
+                    <input id="searchLocation" class="main-searchbox inputs" type="text" placeholder="Enter your country, city, address or zip code..."></input>
+                    <a class="main-searchButton">Search</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-der col-xs-4 ">
+            <img id="imagen_mundo" src="img/mundillo22.png" alt="mundo">
+        </div>
+    </div>
+
+    <section class="second-section">
+        <img class="img-example" src="img/dot_globe.png" alt="">
+    </section> 
+
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <!-- JS Configuración de la librería de geolocalización -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""> 
+    </script>
+    <script src="app.js"></script>
+
+</body>
+</html>
