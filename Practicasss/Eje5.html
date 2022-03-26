@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-3 align-self-center">
+            <label>Introduzca el nombre de la capital de un pais</label>
+            <p></p>
+            <input type="text" required size=20 id="capital"><button style="background-color: rgb(0, 195, 255);" onclick="iniciar()">Obtener Pais</button>
+            <p></p> <label id="res" style="font-size: 70px; color: red;"></label>
+        </div>
+    </div>
+
+    <script>
+        const url = "https://restcountries.eu/rest/v2/capital/";
+
+        let datos;
+        let obj;
+
+        function iniciar() {
+
+            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url+document.getElementById("capital").value)}`)
+                    .then(response => {
+                      if (response.ok) return response.json()
+                      throw new Error('Network response was not ok.')
+                    })
+                    .then(data => {datos = data.contents;
+                        obj = JSON.parse(datos);
+                        console.log(obj[0].name);
+                        document.getElementById("res").innerText = obj[0].name;
+                });
+                    
+        }
+    </script>
+
+</body>
+
+</html>

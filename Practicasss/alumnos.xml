@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<alumnos>
+    <alumno>
+          <nom>Maria</nom>
+          <apellido>Garcia</apellido>
+          <nota convocatoria="PAF2">8.3</nota>
+    </alumno>
+    <alumno>
+          <nombre>Jose</nombre>
+          <apellido>Perez</apellido>
+          <nota convocatoria="PAF1">6.7</nota>
+    </alumno>
+    <alumno>
+          <nombre>Marco</nombre>
+          <apellido>Galvez</apellido>
+          <nota convocatoria="PAF1">3.5</nota>
+    </alumno>
+</alumnos>

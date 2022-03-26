@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        // let httpRequest = new XMLHttpRequest();
+
+        // httpRequest.onload = procesarRespuesta;
+        // httpRequest.open('GET',
+        //     'https://cors-anywhere.herokuapp.com/http://dades.eicub.net/api/1/festivals-assistents?Any=2015&format=json.xml',
+        //     true)
+        // httpRequest.overrideMimeType('text/plain');
+        // httpRequest.withCredentials = true;
+        // httpRequest.send();
+
+        // let obj;
+
+        fetch(`https://cors-anywhere.herokuapp.com/http://dades.eicub.net/api/1/festivals-assistents?Any=2015&format=json.xml`)
+                    .then(response => {
+                      if (response.ok) return response.json()
+                      throw new Error('Network response was not ok.')
+                    })
+                    .then(data => {datos = data.contents;
+                        obj = JSON.parse(datos);
+                        console.log(obj[0].name);
+                        document.getElementById("res").innerText = obj[0].name;
+                });
+
+
+
+        function procesarRespuesta() {
+            let resposta = obj;
+            let lista = document.createElement('ul');
+            console.log(resposta);
+
+            for (let i = 0; i < resposta.length; i++) {
+                let item = processarDada(resposta[i]);
+                lista.appendChild(item);
+            }
+
+            document.body.appendChild(lista);
+        }
+
+        function processarDada(dada) {
+            var item = document.createElement('li');
+            var enllac = document.createElement('a');
+            enllac.textContent = dada.NomDelFestival;
+            if (dada.Web) {
+                enllac.setAttribute('href', dada.Web);
+            }
+            enllac.setAttribute('title', dada.Organitzador);
+            item.appendChild(enllac);
+
+            return item;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Festivals 2015</h1>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let httpRequest = new XMLHttpRequest();
+        httpRequest.onload = procesarRespuesta;
+        httpRequest.open('GET', 'json3.json', true)
+        httpRequest.overrideMimeType('text/plain');
+        httpRequest.send(null);
+        
+        function procesarRespuesta() {
+            var respuesta = JSON.parse(httpRequest.responseText);
+            var lista = document.createElement('ol');
+            for (i = 0; i < respuesta.gente.length; i++) {
+                var item = processarElement(respuesta.gente[i]);
+                lista.appendChild(item);
+            }
+            document.body.appendChild(lista);
+        }
+
+        function processarElement(gente) {
+            var item = document.createElement('li');
+
+            item.textContent = "------Nombre: " + gente.nombre + " ------Edad: " + gente.edad + " ------Ciudad: " + gente.ciudad;
+            return item;
+        }
+    </script>
+
+</body>
+
+</html>

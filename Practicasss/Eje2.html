@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let httpRequest = new XMLHttpRequest();
+
+        httpRequest.onload = procesarRespuesta;
+
+        httpRequest.open('GET', 'alumnos.html', true);
+        httpRequest.overrideMimeType('text/html');
+        httpRequest.send(null);
+
+        function procesarRespuesta() {
+            var respuesta = httpRequest.responseText;
+            var contenedor = document.createElement('div');
+            contenedor.innerHTML = respuesta;
+            document.body.appendChild(contenedor);
+        }
+    </script>
+
+</body>
+
+</html>

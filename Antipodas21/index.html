@@ -24,8 +24,8 @@
                 </div> 
                 <div class="main-search col-xs-6">
                     <label for="searchLocation">Introduce your location: </label>
-                    <input id="searchLocation" class="main-searchbox inputs" type="text" placeholder="Enter your country, city, address or zip code..."></input>
-                    <a class="main-searchButton">Search</a>
+                    <input id="searchLocationInput" class="main-searchbox inputs" type="text" placeholder="Enter your country, city, address or zip code..."></input>
+                    <a id="searchLocationBtn" class="main-searchButton">Search</a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,17 @@
         </div>
     </div>
 
-    <section class="second-section">
+    <section class="second-section row">
+        <div class="col-xs-6">
+            <div id="mapIzq" class="map leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"> </div>
+        </div>
+        <div class="col-xs-6">
+            <div id="mapDer" class="map leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"> </div>
+        </div>
+    </section>
+
+
+    <section class="third-section">
         <img class="img-example" src="img/dot_globe.png" alt="">
     </section> 
 
@@ -43,6 +53,8 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""> 
     </script>
+    
+    <script src="localizacion.js"></script>
     <script src="app.js"></script>
 
 </body>

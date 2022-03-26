@@ -7,8 +7,6 @@ import {OrbitControls} from "https://cdn.jsdelivr.net/npm/three@v0.108.0/example
 
 /// FUENTE ORIGINAL   https://youtu.be/WyK-ix6mgAQ
 
-061
-
 let data= [];
 
 function cargarDatos ( datosCargados ){
@@ -154,7 +152,7 @@ new TWEEN.Tween({k: 2e-6})
           .onUpdate(({k}) => scene.scale.set(k, k, k))
           .start();
 
-        const rotAxis = new THREE.Vector3(0, 1, 0);
+const rotAxis = new THREE.Vector3(0, 1, 0);
 new TWEEN.Tween({rot: Math.PI * 2})
     .to({rot: 0}, 1200)
     .easing(TWEEN.Easing.Quintic.Out)
@@ -297,9 +295,7 @@ function animate() {
 
 // Updates camera renderer
 function render() {
-
     TWEEN.update();
-
     renderer.render( scene, camera );
 };
 
@@ -316,8 +312,8 @@ function removeChildren(){
 // Create and add coordinates for the globe
 function addCountryCoord(earth, country, language, latitude, longitude, color, region, population, area_sq_mi, gdp_per_capita, climate){
  
-   let pointOfInterest = new THREE.SphereGeometry(.1, 32, 32);
-   //let pointOfInterest = new THREE.CylinderGeometry( .05, .1, 5, 12 );
+   //let pointOfInterest = new THREE.SphereGeometry(.1, 32, 32);
+   let pointOfInterest = new THREE.CylinderGeometry( .05, .1, 5, 12 );
  
 
     let lat = latitude * (Math.PI/180);

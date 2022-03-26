@@ -137,6 +137,14 @@ body {
     height: 100vh;
     width: 100vw;
 }
+.map { height: 380px; }
+
+
+/** THIRD SECTION**/
+.third-section{
+    height: 100vh;
+    width: 100vw;
+}
 .img-example{
     width:50vh;
     height:50vh;
